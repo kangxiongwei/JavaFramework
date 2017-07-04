@@ -1,0 +1,23 @@
+plugins {
+    id 'org.springframework.boot' version '1.5.4.RELEASE'
+    id 'java'
+}
+
+jar {
+    baseName = 'kxw_spring_boot'
+    version = '1.0'
+}
+
+bootRepackage {
+    mainClass = 'com.kxw.start.SampleController'
+}
+
+dependencies {
+
+    //jar包
+    compile ("org.springframework.boot:spring-boot-starter-web:1.5.4.RELEASE")
+
+    //测试包
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+
+}
