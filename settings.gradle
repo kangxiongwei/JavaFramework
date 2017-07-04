@@ -1,4 +1,5 @@
 rootProject.name = 'JavaFramework'
 
 include 'framework-mybatis'
+include 'framework-thrift'
 
