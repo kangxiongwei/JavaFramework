@@ -2,19 +2,27 @@
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
 <configuration>
+
+    <typeAliases>
+        <typeAlias type="com.kxw.start.User" alias="user" />
+    </typeAliases>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/"/>
-                <property name="username" value="${username}"/>
-                <property name="password" value="${password}"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/kxw_test?useSSL=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="Kxw@672015"/>
             </dataSource>
         </environment>
     </environments>
+
     <mappers>
-        <mapper resource="org/mybatis/example/BlogMapper.xml"/>
+        <mapper resource="com/kxw/start/UserMapper.xml"/>
     </mappers>
+
 </configuration>

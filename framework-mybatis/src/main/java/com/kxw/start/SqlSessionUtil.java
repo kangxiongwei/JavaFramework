@@ -16,11 +16,18 @@ public class SqlSessionUtil {
     SqlSessionFactory factory;
 
     private SqlSessionUtil() {
+        InputStream in = null;
         try {
-            InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
+            in = Resources.getResourceAsStream("mybatis-config.xml");
             factory = new SqlSessionFactoryBuilder().build(in);
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (in != null) in.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }
